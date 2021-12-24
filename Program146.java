@@ -1,37 +1,49 @@
-import java.util.*;
-import MarvellousNumbers.ArrayX;
+/* 1.Write a Java program which accept string from user and count
+number of capital characters.
 
-class Marvellous extends ArrayX
+	Input : “Marvellous Multi OS”
+	Output : 4
+*/
+
+import java.util.*;
+
+class StringX
 {
-	public Marvellous(int iValue)
+	public String str;
+	public void Accept()
 	{
-		super(iValue);
-	}
-	public int Add()
-	{
-		int iSum=0,iCnt=0;
-		for(iCnt=0;iCnt<Arr.length;iCnt++)
-		{
-			iSum=iSum+Arr[iCnt];
-		}
-		return iSum;
+		Scanner sobj=new Scanner(System.in);
+		
+		System.out.println("Enter the string");
+		 str=sobj.nextLine();
 	}
 }
- 
+class StringDemo extends StringX
+{
+	public int CountCapital()
+	{
+		int iCnt=0,i=0;
+		char Arr[]=str.toCharArray();
+		for(i=0;i<Arr.length;i++)
+		{
+			if((Arr[i]>='A')&&(Arr[i]<='Z'))
+			{
+				iCnt++;
+			}
+		}
+		return iCnt;
+	}
+}
+
 class Program146
 {
 	public static void main(String arg[])
 	{
-		Scanner sobj=new Scanner(System.in);
-		int iLength=0,iRet=0;
+		int iRet=0;
+		StringDemo dobj=new StringDemo();
+		dobj.Accept();
+		iRet=dobj.CountCapital();
 		
-		System.out.println("Enter the number of elements");
-		iLength=sobj.nextInt();
-		
-		Marvellous mobj=new Marvellous(iLength);
-		mobj.Accept();
-		mobj.Display();
-		iRet=mobj.Add();
-		System.out.println("Addition is:"+iRet);
+		System.out.println("count of capital character is : "+iRet);
 	}
 }

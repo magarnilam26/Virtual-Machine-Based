@@ -1,11 +1,7 @@
-/* 2. Write a java program which accept string from user and count
-number of small characters.
-
-Input : “Marvellous”
-
-Output : 9
+/* 3. Write a java program which accept string from user and return
+difference between frequency of small characters and frequency
+of capital characters.
 */
-
 import java.util.*;
 
 class StringX
@@ -21,9 +17,9 @@ class StringX
 }
 class StringDemo extends StringX
 {
-	public int CountSmall()
+	public int CountDiff()
 	{
-		int iCnt=0,i=0;
+		int iCnt=0,i=0,iCnt1=0;
 		char Arr[]=str.toCharArray();
 		for(i=0;i<Arr.length;i++)
 		{
@@ -31,20 +27,24 @@ class StringDemo extends StringX
 			{
 				iCnt++;
 			}
+			else
+			{
+				iCnt1++;
+			}
 		}
-		return iCnt;
+		return iCnt-iCnt1;
 	}
 }
 
-class Program147
+class Program148
 {
 	public static void main(String arg[])
 	{
 		int iRet=0;
 		StringDemo dobj=new StringDemo();
 		dobj.Accept();
-		iRet=dobj.CountSmall();
+		iRet=dobj.CountDiff();
 		
-		System.out.println("count of small character is : "+iRet);
+		System.out.println("Difference from small and capital character is : "+iRet);
 	}
 }
